@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+    <h1 style="text-align: center">הזמנות</h1><br>
+    <h2 style="text-align: center">בחר תאריכים</h2><br>
+
+    <div class="month">
+        <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
+            <li>
+                August<br>
+                <span style="font-size:18px">2023</span>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="weekdays">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+    </ul>
+
+    <ul class="days">
+        <li class="date" onclick="getDay('1')">1</li>
+        <li class="date" onclick="getDay('2')">2</li>
+        <li class="date" onclick="getDay('3')">3</li>
+        <li class="date" onclick="getDay('4')"><span class="active">4</span></li>
+        <li class="date" onclick="getDay('5')">5</li>
+        <li class="date" onclick="getDay('6')">6</li>
+        <li class="date" onclick="getDay('7')">7</li>
+        <li class="date" onclick="getDay('8')">8</li>
+        <li class="date" onclick="getDay('9')">9</li>
+        <li class="date" onclick="getDay('10')">10</li>
+        <li class="date" onclick="getDay('11')">11</li>
+        <li class="date" onclick="getDay('12')">12</li>
+        <li class="date" onclick="getDay('13')">13</li>
+        <li class="date" onclick="getDay('14')">14</li>
+        <li class="date" onclick="getDay('15')">15</li>
+        <li class="date" onclick="getDay('16')">16</li>
+        <li class="date" onclick="getDay('17')">17</li>
+        <li class="date" onclick="getDay('18')">18</li>
+        <li class="date" onclick="getDay('19')">19</li>
+        <li class="date" onclick="getDay('20')">20</li>
+        <li class="date" onclick="getDay('21')">21</li>
+        <li class="date" onclick="getDay('22')">22</li>
+        <li class="date" onclick="getDay('23')">23</li>
+        <li class="date" onclick="getDay('24')">24</li>
+        <li class="date" onclick="getDay('25')">25</li>
+        <li class="date" onclick="getDay('26')">26</li>
+        <li class="date" onclick="getDay('27')">27</li>
+        <li class="date" onclick="getDay('28')">28</li>
+        <li class="date" onclick="getDay('29')">29</li>
+        <li class="date" onclick="getDay('30')">30</li>
+        <li class="date" onclick="getDay('31')">31</li>
+    </ul>
+    <h2 style="text-align: center">תאריכים לבחירה</h2>
+    <h3 style="text-align: center">| 10 | 12 | 16 | 20 | 22 |</h3>
+
+    <h3 id="print" style="text-align: center"></h3><br>
+    <h4 style="text-align: center">שם מלא</h4>
+    <div class="input">
+        <input type="text" class="name">
+    </div>
+
+    <h4 style="text-align: center">אימייל</h4>
+    <div class="input">
+        <input type="email" class="mail">
+    </div>
+    <h4 style="text-align: center">מספר טלפון</h4>
+    <div class="input">
+        <input type="number" class="phone">
+    </div>
+    <h4 style="text-align: center">הערות</h4>
+    <div class="input">
+        <input type="text" class="notes">
+    </div>
+
+    <h3 style="text-align: center"><button class="printPrice"><h3>לקבל מחיר ותאריך הזמנה</h3></button></h3><br>
+
+    <h3 id="print2" style="text-align: center"></h3><br>
+    <h3 style="text-align: center" class="resultName">_ _ _ _ _ _ _</h3>
+    <h3 style="text-align: center" class="resultImail"></h3>
+    <h3 style="text-align: center" class="resultPhone"></h3>
+    <h3 style="text-align: center" class="resultNotes"></h3>
+    <h3 style="text-align: center" class="resultPrice"></h3>
+
+
+
+    <h3 style="text-align: center"><button><h3><a style="color: darkgoldenrod" href="IvanTours.html">Back Home</a></h3> </button></h3>
+</body>
+<style>
+    input{
+        border-width: 1px 5px;
+        border-color: saddlebrown;
+        font-size: 20px;
+        border-radius: 10px;
+        color: darkred;
+
+    }
+    h1{
+        font-size: xxx-large;
+        color: darkgoldenrod;
+        font-style: italic;
+    }
+    h2{
+        color: darkgoldenrod;
+        font-style: italic;
+    }
+    h4{
+        color: darkgoldenrod;
+        font-style: italic;
+    }
+    h3{
+        color: darkgoldenrod;
+        font-style: italic;
+    }
+    button{
+        background-color: wheat;
+        border-radius: 10px;
+        padding-left: 35px;
+        padding-right: 35px;
+        border-color: darkgoldenrod;
+        border-width: 1px 4px ;
+    }
+
+    .input{
+        text-align: center;
+
+    }
+    .print{
+        color: darkgoldenrod;
+        background-color: wheat;
+    }
+
+    * {box-sizing: border-box;}
+    ul {list-style-type: none;}
+    body {font-family: Verdana, sans-serif;}
+
+    .month {
+        padding: 70px 25px;
+        width: 100%;
+        background: wheat;
+        text-align: center;
+    }
+
+    .month ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .month ul li {
+        color: black;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .month .prev {
+        float: left;
+        padding-top: 10px;
+    }
+
+    .month .next {
+        float: right;
+        padding-top: 10px;
+    }
+
+    .weekdays {
+        margin: 0;
+        padding: 10px 0;
+        background-color: darkgrey;
+    }
+
+    .weekdays li {
+        display: inline-block;
+        width: 13.6%;
+        color: #666;
+        text-align: center;
+    }
+
+    .days {
+        padding: 10px 0;
+        background: #eee;
+        margin: 0;
+        cursor: pointer;
+
+    }
+
+    .days li {
+        list-style-type: none;
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size:12px;
+        color: #777;
+    }
+
+    .days li .active {
+        padding: 5px;
+        background: #1abc9c;
+        color: white !important
+    }
+
+    /* Add media queries for smaller screens */
+    @media screen and (max-width:720px) {
+        .weekdays li, .days li {width: 13.1%;}
+    }
+
+    @media screen and (max-width: 420px) {
+        .weekdays li, .days li {width: 12.5%;}
+        .days li .active {padding: 2px;}
+    }
+
+    @media screen and (max-width: 290px) {
+        .weekdays li, .days li {width: 12.2%;}
+    }
+</style>
+
+</html>
+<script src="IvanToursScript.js"></script>
